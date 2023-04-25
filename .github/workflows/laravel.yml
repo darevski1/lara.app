@@ -20,9 +20,12 @@ jobs:
       with:
         php-version: '8.0'
         extensions: mbstring, pdo_mysql, exif, pcntl
-
+        
+    - name: Composer update
+      run: composer install
+      
     - name: Install dependencies
-      run: composer install --prefer-dist --no-interaction --no-suggest
+      run: composer install
 
     - name: Run tests
  
